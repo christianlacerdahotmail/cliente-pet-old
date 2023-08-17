@@ -23,7 +23,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 @Entity
-@org.hibernate.validator.constraints.UUID
 public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -51,7 +50,7 @@ public class Cliente {
 	
 	public Cliente(ClienteRequest clienteRequest) {
 		this.nomeCompleto = clienteRequest.getNomeCompleto();
-		this.email = clienteRequest.getCelular();
+		this.email = clienteRequest.getEmail();
 		this.celular = clienteRequest.getCelular();
 		this.telefone = clienteRequest.getTelefone();
 		this.sexo = clienteRequest.getSexo();
